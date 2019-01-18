@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo_modules</artifactId>
+        <groupId>com.server</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>configurationWS</artifactId>
+
+    <build>
+        <plugins>
+            <!-- usage of jax-ws maven plugin-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>wsimport-from-jdk</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlLocation>
+                        META-INF/wsdl/configuration.wsdl
+                    </wsdlLocation>
+                    <!-- or using wsdls file directory -->
+                    <wsdlDirectory>src/main/resources/META-INF/wsdl</wsdlDirectory>
+                    <!--which META-INF file-->
+                    <wsdlFiles>
+                        <wsdlFile>configuration.wsdl</wsdlFile>
+                    </wsdlFiles>
+                    <!-- Keep generated files -->
+                    <keep>true</keep>
+                    <!-- Package name -->
+                    <packageName>services.omnichannel.ws.uib.tn.com.configurationws</packageName>
+                    <!-- generated source files destination-->
+                    <sourceDestDir>target/generatedclasses</sourceDestDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.3-b01-. --><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://services.omnichannel.ws.uib.tn.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" version="1.0" targetNamespace="http://services.omnichannel.ws.uib.tn.com/" jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0">
+    
+    <xs:annotation>
+        <xs:appinfo>
+            <!--<jaxb:globalBindings>-->
+                <!--<jaxb:javaType name="java.util.Date" xmlType="xs:date" parseMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.parseDate" printMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.printDate"></jaxb:javaType>-->
+
+                <!--<jaxb:javaType name="java.util.Date" xmlType="xs:dateTime" parseMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.parseDateTime" printMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.printDateTime"></jaxb:javaType>-->
+            <!--</jaxb:globalBindings>-->
+        </xs:appinfo>
+    </xs:annotation> 
+
+    <xs:element name="Transfer" type="tns:Transfer"></xs:element>
+
+    <xs:element name="TransferResponse" type="tns:TransferResponse"></xs:element>
+
+    
+    <!-- begin narjes -->        
+    <xs:element name="AddMultipleTransfer" type="tns:AddMultipleTransfer"></xs:element>
+    <xs:element name="AddMultipleTransferResponse" type="tns:AddMultipleTransferResponse"></xs:element>
+    <!-- end narjes--> 
+    
+    <!-- begin narjes -->        
+    <xs:element name="AddPermanentTransfer" type="tns:AddPermanentTransfer"></xs:element>
+    <xs:element name="AddPermanentTransferResponse" type="tns:AddPermanentTransferResponse"></xs:element>
+    <!-- end narjes--> 
+    
+    <!-- begin narjes -->        
+    <xs:element name="CancelPermanentTransfer" type="tns:CancelPermanentTransfer"></xs:element>
+    <xs:element name="CancelPermanentTransferResponse" type="tns:CancelPermanentTransferResponse"></xs:element>
+    <!-- end narjes--> 
+    
+    <xs:element name="RechargePrepaidCard" type="tns:RechargePrepaidCard"></xs:element>
+
+    <xs:element name="RechargePrepaidCardResponse" type="tns:RechargePrepaidCardResponse"></xs:element>
+	
+    <xs:element name="OrderChequeBook" type="tns:OrderChequeBook"></xs:element>
+
+    <xs:element name="OrderChequeBookResponse" type="tns:OrderChequeBookResponse"></xs:element>
+	
+    <xs:element name="EligibleAccountList" type="tns:EligibleAccountList"></xs:element>
+
+    <xs:element name="EligibleAccountListResponse" type="tns:EligibleAccountListResponse"></xs:element>
+	
+    <xs:element name="PayeeList" type="tns:PayeeList"></xs:element>
+
+    <xs:element name="PayeeListResponse" type="tns:PayeeListResponse"></xs:element>
+	
+    <xs:element name="AddPayee" type="tns:AddPayee"></xs:element>
+
+    <xs:element name="AddPayeeResponse" type="tns:AddPayeeResponse"></xs:element>
+	
+    <xs:element name="DeletePayee" type="tns:DeletePayee"></xs:element>
+
+    <xs:element name="DeletePayeeResponse" type="tns:DeletePayeeResponse"></xs:element>
+	
+    <xs:element name="ServiceException" nillable="true" type="tns:serviceFault"></xs:element>
+
+    <xs:complexType name="Transfer">
+        <xs:sequence>
+            <xs:element name="TransferRequest" type="tns:TransferRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- begin narjes-->    
+    <xs:complexType name="AddMultipleTransfer">
+        <xs:sequence>
+            <xs:element name="AddMultipleTransferRequest" type="tns:AddMultipleTransferRequest"></xs:element>			
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes-->    
+    <xs:complexType name="AddPermanentTransfer">
+        <xs:sequence>
+            <xs:element name="AddPermanentTransferRequest" type="tns:AddPermanentTransferRequest"></xs:element>			
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes-->    
+    <xs:complexType name="CancelPermanentTransfer">
+        <xs:sequence>
+            <xs:element name="CancelPermanentTransferRequest" type="tns:CancelPermanentTransferRequest"></xs:element>			
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <xs:complexType name="RechargePrepaidCard">
+        <xs:sequence>
+            <xs:element name="RechargePrepaidCardRequest" type="tns:RechargePrepaidCardRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="OrderChequeBook">
+        <xs:sequence>
+            <xs:element name="OrderChequeBookRequest" type="tns:OrderChequeBookRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="EligibleAccountList">
+        <xs:sequence>
+            <xs:element name="EligibleAccountListRequest" type="tns:EligibleAccountListRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="PayeeList">
+        <xs:sequence>
+            <xs:element name="PayeeListRequest" type="tns:PayeeListRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayee">
+        <xs:sequence>
+            <xs:element name="AddPayeeRequest" type="tns:AddPayeeRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayee">
+        <xs:sequence>
+            <xs:element name="DeletePayeeRequest" type="tns:DeletePayeeRequest"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="TransferResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:TransferReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- begin narjes -->
+    <xs:complexType name="AddMultipleTransferResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:AddMultipleTransferReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes-->
+    <!-- begin narjes -->
+    <xs:complexType name="AddPermanentTransferResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:AddPermanentTransferReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes-->
+    <!-- begin narjes -->
+    <xs:complexType name="CancelPermanentTransferResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:CancelPermanentTransferReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes-->
+    <xs:complexType name="RechargePrepaidCardResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:RechargePrepaidCardReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="OrderChequeBookResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:OrderChequeBookReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="EligibleAccountListResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:EligibleAccountListReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="PayeeListResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:PayeeListReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayeeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:AddPayeeReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayeeResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:DeletePayeeReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="serviceFault">
+        <xs:sequence></xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TransferRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:TransferRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- begin narjes -->
+    <xs:complexType name="AddMultipleTransferRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddMultipleTransferRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="AddPermanentTransferRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddPermanentTransferRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="CancelPermanentTransferRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:CancelPermanentTransferRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <xs:complexType name="RechargePrepaidCardRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:RechargePrepaidCardRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="OrderChequeBookRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:OrderChequeBookRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EligibleAccountListRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:EligibleAccountListRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PayeeListRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:PayeeListRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayeeRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddPayeeRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayeeRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:DeletePayeeRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="MessageHeader">
+        <xs:sequence>
+            <xs:element name="RequestId" type="tns:RequestId"></xs:element>
+            <xs:element name="RequestChannel" type="tns:RequestChannel"></xs:element>
+            <xs:element name="RequestTime" type="tns:TimeStamp"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="TransferRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="SenderRIB" type="tns:RIB"></xs:element>
+            <xs:element name="ReceiverRIB" type="tns:RIB"></xs:element>
+            <xs:element name="Amount" type="tns:Amount"></xs:element>
+            <xs:element name="TransferDate" type="xs:date"></xs:element>
+            <xs:element name="Reason" type="tns:Reason"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- begin narjes -->
+    <xs:complexType name="AddMultipleTransferRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="SenderRIB" type="tns:RIB"></xs:element>
+            <xs:element name="NumberOfReceivers" type="xs:int"></xs:element>
+            <xs:element name="TotalAmount" type="tns:Amount"></xs:element>
+            <xs:element name="MultipleTransferExecutionDate" type="xs:date"></xs:element>
+            <xs:element name="Reason" type="tns:Reason"></xs:element>
+            <xs:element name="MultipleTransferRecordSummary" type="tns:MultipleTransferRecordSummary" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+        
+    <xs:complexType name="MultipleTransferRecordSummary">
+        <xs:sequence>
+            <xs:element name="ReceiverRIB" type="tns:RIB"></xs:element>
+            <xs:element name="Amount" type="tns:Amount"></xs:element>
+        </xs:sequence>
+    </xs:complexType>  
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="AddPermanentTransferRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="SenderRIB" type="tns:RIB"></xs:element>
+            <xs:element name="ReceiverRIB" type="tns:RIB"></xs:element>
+            <xs:element name="Amount" type="tns:Amount"></xs:element>
+            <xs:element name="FirstExecutionDate" type="xs:date"></xs:element>
+            <xs:element name="LastExecutionDate" type="xs:date"></xs:element>
+            <xs:element name="Reason" type="tns:Reason"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="CancelPermanentTransferRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>           
+            <xs:element name="PermanentTransferReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>       
+    <!-- end narjes -->
+    <xs:simpleType name="Reason">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="34"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Amount">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RIB">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{20}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="CardId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{7}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="RechargePrepaidCardRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="SenderRIB" type="tns:RIB"></xs:element>
+            <xs:element name="CardId" type="tns:CardId"></xs:element>
+            <xs:element name="Amount" type="tns:Amount"></xs:element>
+            <xs:element name="RechargeDate" type="xs:date"></xs:element>
+            <xs:element name="Currency" type="xs:string"></xs:element>
+            <xs:element name="Reason" type="tns:Reason"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+ 	
+    <xs:complexType name="OrderChequeBookRequestBody">
+        <xs:sequence>            
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="AccountRIB" type="tns:RIB"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EligibleAccountListRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PayeeListRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayeeRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="Payee" type="tns:Payee"></xs:element>			
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayeeRequestBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="PayeeRIB" type="tns:RIB"></xs:element>
+			
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:simpleType name="RequestId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[0-9]{25}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TimeStamp">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{17}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RequestChannel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MOB"></xs:enumeration>
+            <xs:enumeration value="NET"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="TransferReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:TransferReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- begin narjes -->
+    <xs:complexType name="AddMultipleTransferReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddMultipleTransferReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="AddPermanentTransferReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddPermanentTransferReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <!-- begin narjes -->
+    <xs:complexType name="CancelPermanentTransferReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:CancelPermanentTransferReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->
+    <xs:complexType name="RechargePrepaidCardReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:RechargePrepaidCardReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="OrderChequeBookReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:OrderChequeBookReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EligibleAccountListReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:EligibleAccountListReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="PayeeListReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:PayeeListReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayeeReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:AddPayeeReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayeeReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:DeletePayeeReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+	
+    <xs:complexType name="TransferReplyBody">
+        <xs:sequence>         
+            <xs:element name="TransferReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- begin narjes -->	
+    <xs:complexType name="AddMultipleTransferReplyBody">
+        <xs:sequence>         
+            <xs:element name="MultipleTransferReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->	 
+    <!-- begin narjes -->	
+    <xs:complexType name="AddPermanentTransferReplyBody">
+        <xs:sequence>         
+            <xs:element name="PermanentTransferReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->	 
+     <!-- begin narjes -->	
+    <xs:complexType name="CancelPermanentTransferReplyBody">
+        <xs:sequence>         
+            <xs:element name="PermanentTransferReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- end narjes -->	 
+    <xs:complexType name="RechargePrepaidCardReplyBody">
+        <xs:sequence>     
+            <xs:element name="RechargeReference" type="xs:string"></xs:element>
+        </xs:sequence>    
+    </xs:complexType>
+	
+    <xs:complexType name="OrderChequeBookReplyBody">
+        <xs:sequence>
+            <xs:element name="OrderReference" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EligibleAccountListReplyBody">
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="EligibleAccount" type="tns:EligibleAccount" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PayeeListReplyBody">	        
+        <xs:sequence>
+            <xs:element name="CustomerId" type="tns:CustomerId"></xs:element>
+            <xs:element name="NumberOfPayees" type="xs:int"></xs:element>
+            <xs:element name="Payee" type="tns:Payee" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="AddPayeeReplyBody">
+        <xs:sequence>
+            <xs:element name="PayeeRIB" type="tns:RIB"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DeletePayeeReplyBody">
+        <xs:sequence>
+            <xs:element name="PayeeRIB" type="tns:RIB"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="EligibleAccount">
+        <xs:sequence>
+            <xs:element name="SenderRIB" type="tns:RIB"></xs:element>
+            <xs:element name="SenderType" type="xs:string"></xs:element>
+            <xs:element name="FlagTransferToPayee" type="xs:boolean"></xs:element>
+            <xs:element name="Receiver" type="tns:Receiver" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Receiver">
+        <xs:sequence>
+            <xs:element name="ReceiverRIB" type="tns:RIB"></xs:element>
+            <xs:element name="ReceiverType" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>    
+            
+    <xs:complexType name="Payee">     
+        <xs:sequence>    
+            <xs:element name="PayeeLastName" type="xs:string"></xs:element>
+            <xs:element name="PayeeFirstName" type="xs:string"></xs:element>
+            <xs:element name="PayeeBank" type="tns:BankCode"></xs:element>
+            <xs:element name="PayeeRIB" type="tns:RIB"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+		
+    <xs:complexType name="MessageStatus">
+        <xs:sequence>
+            <xs:element name="ReturnStatus" type="tns:ReturnStatus"></xs:element>
+            <xs:element name="ReturnStatusProvider" type="tns:ReturnStatusProvider" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ReturnStatus">
+        <xs:sequence>
+            <xs:element name="ReturnCode" type="tns:ReturnCode"></xs:element>
+            <xs:element name="ReturnCodeDesc" type="tns:ReturnCodeDesc" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="ReturnCode">
+        <xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ReturnCodeDesc">
+        <xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ReturnStatusProvider">
+        <xs:sequence>
+            <xs:element name="ReturnCodeProvider" type="tns:ReturnCodeProvider"></xs:element>
+            <xs:element name="ReturnCodeDescProvider" type="tns:ReturnCodeDesc" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="ReturnCodeProvider">
+        <xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="CustomerId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="BankCode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.3-b01-. --><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://services.omnichannel.ws.uib.tn.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" version="1.0" targetNamespace="http://services.omnichannel.ws.uib.tn.com/" jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0">
+    
+    <xs:annotation>
+        <xs:appinfo>
+            <!--<jaxb:globalBindings>
+                <jaxb:javaType name="java.util.Date" xmlType="xs:date" parseMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.parseDate" printMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.printDate"></jaxb:javaType>
+
+                <jaxb:javaType name="java.util.Date" xmlType="xs:dateTime" parseMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.parseDateTime" printMethod="com.tn.uib.ws.omnichannel.utilities.DateAdapter.printDateTime"></jaxb:javaType>
+            </jaxb:globalBindings>-->
+        </xs:appinfo>
+    </xs:annotation> 
+
+    <xs:element name="SetParameter" type="tns:SetParameter"></xs:element>
+    <xs:element name="SetParameterResponse" type="tns:SetParameterResponse"></xs:element>
+    <xs:element name="ParseException" type="tns:ParseFault"></xs:element>
+    <xs:element name="ServiceException" nillable="true" type="tns:serviceFault"></xs:element>
+
+    <xs:complexType name="serviceFault">
+        <xs:sequence></xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ParseFault">
+        <xs:sequence>
+            <xs:element name="errorOffset" type="xs:int"></xs:element>
+            <xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetParameter">
+        <xs:sequence>
+            <xs:element name="SetParameterRequest" type="tns:SetParameterRequest"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetParameterResponse">
+        <xs:sequence>
+            <xs:element name="return" type="tns:SetParameterReply"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MessageHeader">
+        <xs:sequence>
+            <xs:element name="RequestId" type="tns:RequestId"></xs:element>
+            <xs:element name="RequestChannel" type="tns:RequestChannel"></xs:element>
+            <xs:element name="RequestTime" type="tns:TimeStamp"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="RequestId">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}[0-9]{25}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TimeStamp">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{17}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="RequestChannel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MOB"></xs:enumeration>
+            <xs:enumeration value="NET"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="MessageStatus">
+        <xs:sequence>
+            <xs:element name="ReturnStatus" type="tns:ReturnStatus"></xs:element>
+            <xs:element name="ReturnStatusProvider" type="tns:ReturnStatusProvider" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ReturnStatus">
+        <xs:sequence>
+            <xs:element name="ReturnCode" type="tns:ReturnCode"></xs:element>
+            <xs:element name="ReturnCodeDesc" type="tns:ReturnCodeDesc" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="ReturnCode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ReturnCodeDesc">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="128"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ReturnStatusProvider">
+        <xs:sequence>
+            <xs:element name="ReturnCodeProvider" type="tns:ReturnCodeProvider" minOccurs="0"></xs:element>
+            <xs:element name="ReturnCodeDescProvider" type="tns:ReturnCodeDesc" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="ReturnCodeProvider">
+        <xs:restriction base="xs:string"></xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="SetParameterRequest">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:SetParameterRequestBody"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetParameterRequestBody">
+        <xs:sequence>
+            <xs:element name="ParameterKey" type="xs:string"></xs:element>
+            <xs:element name="Value" type="xs:string"></xs:element>
+            <xs:element name="Description" type="xs:string"></xs:element>
+            <xs:element name="Type" type="tns:Types"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetParameterReply">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="tns:MessageHeader"></xs:element>
+            <xs:element name="MessageBody" type="tns:SetParameterReplyBody" minOccurs="0"></xs:element>
+            <xs:element name="MessageStatus" type="tns:MessageStatus"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SetParameterReplyBody">
+        <xs:sequence>
+            <xs:element name="ParameterKey" type="xs:string"></xs:element>
+            <xs:element name="Value" type="xs:string"></xs:element>
+            <xs:element name="Description" type="xs:string"></xs:element>
+            <xs:element name="Type" type="tns:Types"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="Types">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="String"></xs:enumeration>
+            <xs:enumeration value="Double"></xs:enumeration>
+            <xs:enumeration value="Integer"></xs:enumeration>
+            <xs:enumeration value="Boolean"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
