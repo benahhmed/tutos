@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>demo_actuator</artifactId>
+	<version>2.0</version>
+	<packaging>jar</packaging>
+
+	<name>demo_actuator</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- marked the embedded servlet container as provided -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+		<!-- WS Configuration -->
+		<dependency>
+			<groupId>com.configuration</groupId>
+			<artifactId>configuration</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- WS Transactional -->
+		<dependency>
+			<groupId>com.transactional</groupId>
+			<artifactId>transactional</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- http://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<!--<version>5.1.31</version>-->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- ldap -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-ldap</artifactId>
+		</dependency>
+		<!-- swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<!-- hateoas -->
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+			<version>0.24.0.RELEASE</version>
+		</dependency>
+
+		<!-- Spring boot actuator to expose metrics endpoint -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Micormeter core dependecy  -->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-core</artifactId>
+		</dependency>
+		<!-- Micrometer Prometheus registry  -->
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+
+		<!--JSF Dependencies-->
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>2.2.12</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.apache.tomcat.embed</groupId>-->
+			<!--<artifactId>tomcat-embed-jasper</artifactId>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.ocpsoft.rewrite</groupId>
+			<artifactId>rewrite-servlet</artifactId>
+			<version>3.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ocpsoft.rewrite</groupId>
+			<artifactId>rewrite-integration-faces</artifactId>
+			<version>3.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ocpsoft.rewrite</groupId>
+			<artifactId>rewrite-config-prettyfaces</artifactId>
+			<version>3.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.1</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
